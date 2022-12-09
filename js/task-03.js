@@ -13,10 +13,14 @@ const images = [
   },
 ];
 
-const imagesElements = document.querySelector('.gallery');
+const galleryImages = document.querySelector('.gallery');
 
-const createLiImage = images.map(image =>
-  `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+const imagesElements = images
+  .map(
+    ({ url, alt }) => `<li>
+<img src="${url}" alt="${alt}" width="500">
+</li>`,
+  )
   .join('');
 
-  imagesElements.insertAdjacentHTML("beforeend", createLiImage);
+galleryImages.insertAdjacentHTML('beforeend', imagesElements);
