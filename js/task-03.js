@@ -18,9 +18,11 @@ const galleryImages = document.querySelector('.gallery');
 const imagesElements = images
   .map(
     ({ url, alt }) => `<li>
-<img src="${url}" alt="${alt}" width="500">
+<img src="${url}" alt="${alt}" width="300">
 </li>`,
-  )
-  .join('');
+  );
 
-galleryImages.insertAdjacentHTML('beforeend', imagesElements);
+galleryImages.insertAdjacentHTML("afterbegin", imagesElements);
+galleryImages.style.listStyleType = 'none';
+galleryImages.style.display = 'flex';
+
