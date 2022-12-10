@@ -4,13 +4,16 @@ loginForm.addEventListener('submit', validForm);
 
 function validForm(event) {
     event.preventDefault();
-    const {
-        elements: { email, password } } = event.currentTarget;
+    const { elements: { email, password } } = event.currentTarget;
+
     if (email.value === "" || password.value === "") {
-        alert('Please fill in all fields');
-        return;
+        return alert('Please fill in all fields');
     }
-    console.log(`Email: ${email.value}, Password: ${password.value}`);
+    const dataForm = {
+        email: email.value,
+        password: password.value,
+    }
+    console.log(dataForm);
     event.currentTarget.reset();
 }
 
